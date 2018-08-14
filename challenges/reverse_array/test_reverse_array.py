@@ -25,8 +25,3 @@ def test_list_can_reverse_strings():
 
   #assert
   assert expected == actual
-
-
-def test_argument_must_be_valid_list():
-  with pytest.raises(TypeError):
-    reverse_array({})
