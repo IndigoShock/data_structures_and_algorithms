@@ -16,6 +16,7 @@ def test_list_gets_reversed_when_odd_number_length():
   #assert
   assert expected == actual
 
+
 def test_list_gets_reversed_when_even_number_length():
   #arrange
   expected = [1, 2, 3, 4, 5]
