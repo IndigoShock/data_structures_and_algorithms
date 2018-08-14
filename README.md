@@ -1,6 +1,6 @@
 # Data Structures
 ## Table of Contents
-=========================================
+-----------------------------------------
 
 ## Challenges
 1. [ReverseArray](challenges/reverse_array)
