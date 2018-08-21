@@ -56,7 +56,7 @@ class LinkedList(object):
     def insert_before(self, val, target):
         """ Docstring
         """
-        current = self.head
+        # current = self.head
         pass
 
     def insert_after(self, val, target):
