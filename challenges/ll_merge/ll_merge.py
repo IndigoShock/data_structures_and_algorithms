@@ -1,4 +1,4 @@
-from ll_merge import Node
+from .node import Node
 
 
 def merge(ll_one, ll_two):
@@ -21,20 +21,3 @@ def merge(ll_one, ll_two):
     ll_one.current._next = ll_two.current
 
     return ll_one.current
-
-
-# def ll_merge(ll_one, ll_two):
-#     try:
-#         ll_one_current = ll_one.head
-#         ll_two_current = ll_two.head
-
-#         while ll_one_current is not None and ll_two_current is not None:
-#             ll_one_next = ll_one_current._next
-#             ll_two_next = ll_two_current._next
-
-#             ll_one_current._next, ll_two_current._next = ll_two_next, ll_one_next
-#             ll_one_current = ll_one_next
-#         ll_two.head = ll_two_current
-
-#     except None:
-#         'Not valid input'

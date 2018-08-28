@@ -18,11 +18,11 @@ def test_list_gets_reversed_when_odd_number_length():
 
 
 def test_list_gets_reversed_when_even_number_length():
-  #arrange
-  expected = [1, 2, 3, 4, 5]
+    # arrange
+    expected = [1, 2, 3, 4, 5]
 
-  #act
-  actual = insertShiftArray([1, 2, 4, 5], 3)
+    # act
+    actual = insertShiftArray([1, 2, 4, 5], 3)
 
-  #assert
-  assert expected == actual
+    # assert
+    assert expected == actual
