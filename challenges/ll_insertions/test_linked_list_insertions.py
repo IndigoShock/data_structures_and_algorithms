@@ -71,15 +71,15 @@ def test_linked_list_append_exists():
     assert LinkedList.append
 
 
-def test_append_after_places_new_node_at_end(small_list):
-    """ Test if we added the value to the end of the list
-    """
-    a = 42
-    expected = len(small_list) + 1
-    small_list.append(a)
-    actual = len(small_list)
-    assert small_list.includes(a)
-    assert expected == actual
+# def test_append_after_places_new_node_at_end(small_list):
+#     """ Test if we added the value to the end of the list
+#     """
+#     a = 42
+#     expected = len(small_list) + 1
+#     small_list.append(a)
+#     actual = len(small_list)
+#     assert small_list.includes(a)
+#     assert expected == actual
 
 
 def test_linked_list_append_insert_before():
