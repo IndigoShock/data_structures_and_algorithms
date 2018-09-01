@@ -3,13 +3,22 @@ class BinaryTree:
         self.root = None
 
     def __str__(self):
-        pass
+        """This shows the root node
+        """
+        return f'Root {self.root}'
 
     def __repr__(self):
-        pass
+        """This also shows the root node but more elegantly
+        """
+        return f'Binary Tree. The root node is {self.root}'
 
     def insert(self, callable=lambda node: print(node)):
-        """
+        """This will insert the wanted value into a binary tree.
+        If the current node is not empty, the value will insert itself as the
+        root. But if it is not empty, it will traverse through starting from
+        root. And determine whether they are less than or equal to current
+        value. If so, assign the value as the left child. If greater than the
+        current value, assign the value as right child.
         """
         def _walk(root, new_node=None):
             if root is not None:
