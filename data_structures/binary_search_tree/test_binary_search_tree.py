@@ -8,7 +8,7 @@ def empty_tree():
 
 
 @pytest.fixture
-def small_list():
+def small_tree():
     bst = BinaryTree()
     bst.insert(1)
     bst.insert(2)
@@ -38,4 +38,10 @@ def test_insert_module_exists():
 
 
 def test_small_tree_exists():
-    assert small_list
+    assert small_tree
+
+
+def test_insert_small_tree():
+    bst = empty_tree()
+    bst.insert(small_tree)
+    assert bst is not None
