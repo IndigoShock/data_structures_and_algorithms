@@ -8,5 +8,8 @@ class Node(object):
     def __str__():
         pass
 
-    def __repr__():
-        pass
+    def __repr__(self, val, data, left, right):
+        """repr shows the value and the reference to the node
+        next to the current node.
+        """
+        return f'<Node | Val: {self.val} | Data: {self.data}> | Left Child: {self.left} | Right Child: {self.right}'
