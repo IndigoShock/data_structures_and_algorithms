@@ -1,6 +1,15 @@
+from .node import Node
+
+
 class BinaryTree:
     def __init__(self, iterable=None):
         self.root = None
+
+        if iterable is None:
+            iterable = []
+
+        for ele in iterable:
+            self.insert(ele)
 
     def __str__(self):
         """This shows the root node
@@ -12,7 +21,7 @@ class BinaryTree:
         """
         return f'Binary Tree. The root node is {self.root}'
 
-    def insert(self, callable=lambda node: print(node)):
+    def insert(self, val):
         """This will insert the wanted value into a binary tree.
         If the current node is not empty, the value will insert itself as the
         root. But if it is not empty, it will traverse through starting from
@@ -20,23 +29,69 @@ class BinaryTree:
         value. If so, assign the value as the left child. If greater than the
         current value, assign the value as right child.
         """
-        def _walk(root, new_node=None):
-            if root is not None:
-                root = new_node
 
-            if new_node.val <= root.val:
-                if root.left is not None:
-                    _walk(self.root.left, new_node)
+        # def _walk(root, new_node=None):
+        # if root is not None:
+        #     root = new_node
 
-                else:
-                    root.left = new_node
+        # # while loop
 
-            if new_node.val > root.val:
-                if root.right is not None:
-                    _walk(self.root.right, new_node)
+        # if new_node.val <= root.val:
+        #     if root.left is not None:
+        #         _walk(self.root.left, new_node)
 
-                else:
-                    root.right = new_node
+        #     else:
+        #         root.left = new_node
+
+        # if new_node.val > root.val:
+        #     if root.right is not None:
+        #         _walk(self.root.right, new_node)
+
+        #     else:
+        #         root.right = new_node
+
+        node = Node(val)
+        if self.root is None:
+            self.root = node
+            return node
+
+        current = self.root
+        while current:
+            if val == current.val:
+                raise ValueError('Value already exists')
+            if val < current.val:
+                if current.left is None:
+                    current.left = node
+                    break
+                current = current.left
+
+            if val > current.val:
+                if current.right is None:
+                    current.right = node
+                    break
+                current = current.right
+
+        return node
+
+    # public void BreadthFirst(Node root)
+    #     {
+    #         Queue<Node> breadth = new Queue<Node>();
+    #         breadth.Enqueue(root);
+
+    #         while (breadth.TryPeek(out root))
+    #         {
+    #             Node front = breadth.Dequeue();
+    #             Console.Write(front.Value);
+    #             if (front.LeftChild != null)
+    #             {
+    #                 breadth.Enqueue(front.LeftChild);
+    #             }
+    #             if (front.RightChild != null)
+    #             {
+    #                 breadth.Enqueue(front.RightChild);
+    #             }
+    #         }
+    #     }
 
     def in_order(self, callable=lambda node: print(node)):
         """Go left, visit, then go right
