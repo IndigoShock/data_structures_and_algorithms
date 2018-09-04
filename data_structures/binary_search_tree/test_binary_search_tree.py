@@ -77,3 +77,10 @@ def test_inorder_traversal():
 
     bt.in_order(generate_list)
     assert expected == actual
+
+
+def test_insert_value_that_already_exists():
+    bt = BinaryTree([25])
+    bt.insert(25)
+    with pytest.raises(ValueError):
+        bt.insert(25)
