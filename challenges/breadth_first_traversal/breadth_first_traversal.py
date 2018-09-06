@@ -17,6 +17,34 @@ class Node(object):
         return f'<Node | Current Val: {self.val} | Data: {self.data}> | The Left Child: {self.left} | The Right Child: {self.right}'
 
 
+class Queue(Node):
+    def __init__(self):
+        self.front = None
+
+    def __len__(self):
+        """This shows the length
+        """
+        return self._length
+
+    def __str__(self):
+        """This will show the head and the length
+        """
+        return f'Front: {self.front} | Length: {self._length} | Rear: {self.rear}'
+
+    def enqueue(self, node):
+        self.rear.next = node
+        self.rear = node
+
+    def dequeue(self):
+        temp = self.front
+        self.front = self.front.next
+        temp.next = None
+        return temp
+
+    def peek(self):
+        return self.front
+
+
 class BinaryTree:
     def __init__(self, iterable=None):
         self.root = None
@@ -129,47 +157,16 @@ class BinaryTree:
 
         _walk(self.root)
 
-
-class Queue(Node):
-    def __init__(self):
-        self.front = None
-        self.rear = None
-
-    def __len__(self):
-        """This shows the length
+    def traverse_breadth_first(Node, root):
+        """ Return all the nodes on each level of a binary tree
         """
-        return self._length
+        breadth = Queue()
+        breadth.enqueue(root)
 
-    def __str__(self):
-        """This will show the head and the length
-        """
-        return f'Front: {self.front} | Length: {self._length} | Rear: {self.rear}'
-
-    def enqueue(self, node):
-        self.rear.next = node
-        self.rear = node
-
-    def dequeue(self):
-        temp = self.front
-        self.front = self.front.next
-        temp.next = None
-        return temp
-
-    def peek(self):
-        return self.front
-
-
-def traverse_breadth_first(Node, root):
-    """ Return all the nodes on each level of a binary tree
-    """
-
-    breadth = Queue()
-    breadth.enqueue(root)
-
-    while breadth.head is not None:
-        front = breadth.dequeue()
-        print(front.Value)
-        if (front.left is not None):
-            breadth.enqueue(front.left)
-        if (front.right is not None):
-            breadth.enqueue(front.right)
+        while breadth.head is not None:
+            front = breadth.dequeue()
+            print(front.Value)
+            if (front.left is not None):
+                breadth.enqueue(front.left)
+            if (front.right is not None):
+                breadth.enqueue(front.right)
