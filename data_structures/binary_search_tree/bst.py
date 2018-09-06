@@ -30,26 +30,6 @@ class BinaryTree:
         current value, assign the value as right child.
         """
 
-        # def _walk(root, new_node=None):
-        # if root is not None:
-        #     root = new_node
-
-        # # while loop
-
-        # if new_node.val <= root.val:
-        #     if root.left is not None:
-        #         _walk(self.root.left, new_node)
-
-        #     else:
-        #         root.left = new_node
-
-        # if new_node.val > root.val:
-        #     if root.right is not None:
-        #         _walk(self.root.right, new_node)
-
-        #     else:
-        #         root.right = new_node
-
         node = Node(val)
         if self.root is None:
             self.root = node
@@ -72,26 +52,6 @@ class BinaryTree:
                 current = current.right
 
         return node
-
-    # public void BreadthFirst(Node root)
-    #     {
-    #         Queue<Node> breadth = new Queue<Node>();
-    #         breadth.Enqueue(root);
-
-    #         while (breadth.TryPeek(out root))
-    #         {
-    #             Node front = breadth.Dequeue();
-    #             Console.Write(front.Value);
-    #             if (front.LeftChild != null)
-    #             {
-    #                 breadth.Enqueue(front.LeftChild);
-    #             }
-    #             if (front.RightChild != null)
-    #             {
-    #                 breadth.Enqueue(front.RightChild);
-    #             }
-    #         }
-    #     }
 
     def in_order(self, callable=lambda node: print(node)):
         """Go left, visit, then go right

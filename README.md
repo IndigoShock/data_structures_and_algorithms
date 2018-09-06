@@ -17,3 +17,4 @@
 ## Data Structures
 1. [Linked Lists](/data_structures/linked_lists)
 2. [Stacks And Queues](/data_structures/stack_queue)
+3. [Trees](/data_structures/binary_search_tree)
