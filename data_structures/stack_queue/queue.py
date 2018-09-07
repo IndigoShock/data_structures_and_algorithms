@@ -21,8 +21,11 @@ class Queue(object):
         """
         return f'Front: {self.front} | Length: {self._length} | Rear: {self.rear}'
 
-    def enqueue(self, node):
-        self.rear._next = node
+    def enqueue(self, val):
+        # (two if's rear is none)
+        node = Node(val)
+        # import pdb; pdb.set_trace()
+        node._next = self.rear
         self.rear = node
 
     def dequeue(self):

@@ -55,3 +55,8 @@ def test_default_value_of_rear(empty_queue):
 
 def test_can_instantiate_empty_queue(empty_queue):
     assert isinstance(empty_queue, Queue)
+
+
+def test_enqueue_of_value_in_queue(empty_queue):
+    empty_queue.enqueue(100)
+    assert empty_queue.rear.val == 100
